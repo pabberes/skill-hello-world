@@ -17,6 +17,7 @@
 
 from adapt.intent import IntentBuilder
 from mycroft import MycroftSkill, intent_handler
+import random
 
 class HelloWorldSkill(MycroftSkill):
     def __init__(self):
@@ -34,9 +35,17 @@ class HelloWorldSkill(MycroftSkill):
         settings will be available."""
         my_setting = self.settings.get('my_setting')
 
+    #Dudas...
+    # 1. - ¿Cual es la relación enter el 'intent' de arriba con el 'handle' de abajo?
+    #2. - Incluir sample6.intent.json -> donde lo llama en el código?
+    #3. - hello-world.feature -> informativa?
+    #4. - Diferencias entre IntentBuider y no Intent.
+
     @intent_handler(IntentBuilder('PabloIntent').require('PabloKeyword'))
     def handle_pablo_intent(self, message):
-        self.speak_dialog("pablo is a great guy")
+        x = random.random()
+        x = x*10
+        self.speak_dialog("pablo is a great guy, he is {}".format(x))
 
     @intent_handler(IntentBuilder('ThankYouIntent').require('ThankYouKeyword'))
     def handle_thank_you_intent(self, message):
