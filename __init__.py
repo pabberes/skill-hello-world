@@ -36,7 +36,7 @@ class HelloWorldSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder('PabloIntent').require('PabloKeyword'))
     def handle_pablo_intent(self, message):
-        self.speak_dialog("pablo")
+        self.speak_dialog("pablo is a great guy")
 
     @intent_handler(IntentBuilder('ThankYouIntent').require('ThankYouKeyword'))
     def handle_thank_you_intent(self, message):
