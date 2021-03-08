@@ -35,12 +35,6 @@ class HelloWorldSkill(MycroftSkill):
         settings will be available."""
         my_setting = self.settings.get('my_setting')
 
-    #Dudas...
-    # 1. - ¿Cual es la relación enter el 'intent' de arriba con el 'handle' de abajo?
-    #2. - Incluir sample6.intent.json -> donde lo llama en el código?
-    #3. - hello-world.feature -> informativa?
-    #4. - Diferencias entre IntentBuider y no Intent.
-
     @intent_handler(IntentBuilder('PabloIntent').require('PabloKeyword'))
     def handle_pablo_intent(self, message):
         x = random.random()
